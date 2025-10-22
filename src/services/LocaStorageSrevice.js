@@ -1,0 +1,35 @@
+// save data to local stor
+// age
+export const saveLoginData=(userData)=>
+{
+    localStorage.setItem("userData",JSON.stringify(userData))
+}
+
+// get data from local storage
+export const getLoginData=()=>
+{
+    const userDataStr=localStorage.getItem("userData")
+    if(userDataStr) return JSON.parse(userDataStr)
+    else return null
+}
+
+export const getUserFromLocalStorage=()=>
+{
+   
+    return getLoginData()?.user
+}
+
+export const getAccessTokenFromLocalStorage=()=>
+{
+    return getLoginData()?.accessToken
+}
+
+export const removeLoginData=()=>
+{
+    localStorage.removeItem("userData")
+}
+
+export const isUserLogin=()=>
+{
+    return getUserFromLocalStorage() && getAccessTokenFromLocalStorage()
+}
