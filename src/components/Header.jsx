@@ -65,7 +65,7 @@ function Header() {
             <div className="hidden md:flex space-x-4">
               <Link
                 to="/login"
-                className="text-white hover:text-gray-200 transition-transform hover:scale-105 duration-200"
+                className="my-auto text-white hover:text-gray-200 transition-transform hover:scale-105 duration-200"
               >
                 Login
               </Link>
