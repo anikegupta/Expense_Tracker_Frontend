@@ -7,18 +7,18 @@ export const axiosInstance = axios.create({
   baseURL: serverBaseUrl,
 });
 
-// axiosInstance.interceptors.request.use(
-//   function (config) {
-//     const accessToken = getAccessTokenFromLocalStorage();
-//     if (accessToken) {
-//       config.headers["Authorization"] = accessToken;
-//     }
-//     return config;
-//   },
-//   function (error) {
-//     return Promise.reject(error);
-//   }
-// );
+axiosInstance.interceptors.request.use(
+  function (config) {
+    const accessToken = getAccessTokenFromLocalStorage();
+    if (accessToken) {
+      config.headers["Authorization"] = accessToken;
+    }
+    return config;
+  },
+  function (error) {
+    return Promise.reject(error);
+  }
+);
 
 // ✅ Added response interceptor for expired token
 axiosInstance.interceptors.response.use(
