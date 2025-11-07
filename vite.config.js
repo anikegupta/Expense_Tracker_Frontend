@@ -4,5 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import flowbiteReact from "flowbite-react/plugin/vite"
 // https://vite.dev/config/
 export default defineConfig({
+  server:{
+    proxy:{
+      '/api':'http://localhost:8080',
+    },
+  },
   plugins: [react(),tailwindcss(),flowbiteReact()],
 })
