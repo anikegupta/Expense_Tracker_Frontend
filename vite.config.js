@@ -6,7 +6,7 @@ import flowbiteReact from "flowbite-react/plugin/vite"
 export default defineConfig({
   server:{
     proxy:{
-      '/api':'http://localhost:8010',
+      '/api':'https://expense-tracker-4-ov1b.onrender.com/api',
     },
   },
   plugins: [react(),tailwindcss(),flowbiteReact()],
