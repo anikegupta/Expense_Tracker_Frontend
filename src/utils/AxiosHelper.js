@@ -5,6 +5,7 @@ import { getAccessTokenFromLocalStorage, removeLoginData } from "../services/Loc
 
 export const axiosInstance = axios.create({
   baseURL: serverBaseUrl,
+  withCredentials: true,
 });
 
 axiosInstance.interceptors.request.use(
