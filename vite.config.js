@@ -6,7 +6,7 @@ import flowbiteReact from "flowbite-react/plugin/vite"
 export default defineConfig({
   server:{
     proxy:{
-      '/api':'http://localhost:8080',
+      '/api':'http://localhost:8010',
     },
   },
   plugins: [react(),tailwindcss(),flowbiteReact()],
