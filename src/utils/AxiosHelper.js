@@ -5,14 +5,14 @@ import { getAccessTokenFromLocalStorage, removeLoginData } from "../services/Loc
 
 export const axiosInstance = axios.create({
   baseURL: serverBaseUrl,
-  withCredentials: true,
+  withCredentials: false,
 });
 
 axiosInstance.interceptors.request.use(
   function (config) {
     const accessToken = getAccessTokenFromLocalStorage();
     if (accessToken) {
-      config.headers["Authorization"] = accessToken;
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
     }
     return config;
   },
